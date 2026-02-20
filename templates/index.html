@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trade Analytics Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>📈 Trade Analytics Dashboard</h1>
+
+<div class="container">
+
+<div class="card">
+
+<form method="get" action="/market">
+
+    <label>Stock Symbol:</label>
+    <input type="text" id="stockInput" name="stock"
+           placeholder="Search Stock (e.g SBIN, TCS, RELIANCE)" required>
+
+    <div id="suggestions"></div>
+
+    <label>Period:</label>
+    <select name="period">
+        <option value="1mo">1 Month</option>
+        <option value="3mo">3 Months</option>
+        <option value="6mo">6 Months</option>
+        <option value="1y">1 Year</option>
+        <option value="5y">5 Years</option>
+    </select>
+
+    <button type="submit">Analyze Stock</button>
+
+</form>
+
+</div>
+
+{% if chart %}
+
+<!-- AI SIGNAL -->
+<div class="card signal-card">
+
+    <h3>AI Trading Signal</h3>
+
+    <div class="signal-box 
+        {% if signal == 'BUY' %}buy{% endif %}
+        {% if signal == 'SELL' %}sell{% endif %}
+        {% if signal == 'HOLD' %}hold{% endif %}
+    ">
+        {{ signal }}
+    </div>
+
+</div>
+
+<div class="card">
+    <h3>Stock Overview</h3>
+    <p>Current Price: {{ details.price }}</p>
+    <p>Market Cap: {{ details.market_cap }}</p>
+    <p>52 Week High: {{ details['52_week_high'] }}</p>
+    <p>52 Week Low: {{ details['52_week_low'] }}</p>
+</div>
+
+<div class="card">
+    {{ chart|safe }}
+</div>
+
+{% endif %}
+
+</div>
+
+<script src="/static/search.js"></script>
+
+</body>
+</html>

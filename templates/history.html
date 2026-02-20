@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Trade History</h2>
+<table border="1">
+<tr>
+<th>ID</th><th>Buy</th><th>Sell</th><th>Profit</th><th>Result</th>
+</tr>
+{% for t in trades %}
+<tr>
+<td>{{t[0]}}</td>
+<td>{{t[1]}}</td>
+<td>{{t[2]}}</td>
+<td>{{t[3]}}</td>
+<td>{{ "Profit" if t[4]==1 else "Loss" }}</td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

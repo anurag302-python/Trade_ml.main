@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Add Trade</h2>
+
+<form method="post">
+  <select name="stock" required>
+    <option value="">Select Stock</option>
+    <option>RELIANCE</option>
+    <option>TCS</option>
+    <option>INFY</option>
+    <option>HDFC</option>
+    <option>ITC</option>
+  </select><br><br>
+
+  <input type="date" name="trade_date" required><br><br>
+
+  <input type="number" step="0.01" name="buy" placeholder="Buy Price" required><br><br>
+  <input type="number" step="0.01" name="sell" placeholder="Sell Price" required><br><br>
+
+  <button>Add Trade</button>
+</form>
+
+</body>
+</html>

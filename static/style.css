@@ -1,0 +1,95 @@
+body {
+    background: #0f172a;
+    color: white;
+    font-family: Arial;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.card {
+    background: #111827;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.search-box {
+    position: relative;
+}
+
+#suggestions {
+    position: absolute;
+    background: #1f2937;
+    color: white;
+    width: 250px;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 5px;
+    z-index: 9999;
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#suggestions div:hover {
+    background: #2563eb;
+}
+
+button {
+    padding: 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+}
+
+/* ---------- SIGNAL CARD ---------- */
+
+.signal-card{
+    text-align:center;
+}
+
+/* Signal box base */
+.signal-box{
+    margin-top:15px;
+    padding:15px 40px;
+    font-size:26px;
+    font-weight:bold;
+    border-radius:12px;
+    display:inline-block;
+    letter-spacing:2px;
+    transition:0.3s;
+    animation:pulse 1.5s infinite;
+}
+
+/* BUY */
+.signal-box.buy{
+    background:#00ff88;
+    color:black;
+    box-shadow:0 0 20px #00ff88;
+}
+
+/* SELL */
+.signal-box.sell{
+    background:#ff3b3b;
+    color:white;
+    box-shadow:0 0 20px #ff3b3b;
+}
+
+/* HOLD */
+.signal-box.hold{
+    background:#ffc107;
+    color:black;
+    box-shadow:0 0 20px #ffc107;
+}
+
+/* Glow animation */
+@keyframes pulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.05)}
+    100%{transform:scale(1)}
+}
